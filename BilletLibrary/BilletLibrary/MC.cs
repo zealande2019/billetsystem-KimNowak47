@@ -4,9 +4,9 @@ using System.Text;
 
 namespace BilletLibrary
 {
-    class MC : KøretøjType
+    public class MC : KøretøjType
     {
-        private decimal NormalPris = 125;
+        private decimal NormalPris = 125; 
 
         public override decimal Pris()
         {
@@ -18,6 +18,8 @@ namespace BilletLibrary
             return "MC";
         }
 
+        public MC()
+        { }
         public MC(string nummerplade)
         {
             if (nummerplade.Length < 8)

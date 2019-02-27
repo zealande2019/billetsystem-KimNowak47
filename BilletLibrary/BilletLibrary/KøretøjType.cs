@@ -4,10 +4,10 @@ using System.Text;
 
 namespace BilletLibrary
 {
-    abstract class KøretøjType
+    public abstract class KøretøjType
     {
-        public String NummerPlade;
-        public DateTime Dato;
+        public String NummerPlade { get; set; }
+        public DateTime Dato = new DateTime();
         public abstract decimal Pris();
 
         public abstract string Køretøj();

@@ -4,13 +4,14 @@ using System.Text;
 
 namespace BilletLibrary
 {
-    class Bil : KøretøjType
+    public class Bil : KøretøjType
     {
-        
+
+        private decimal NormalPris { get; set; } = 125;
 
         public override decimal Pris()
         {
-            return 240;
+            return NormalPris;
         }
 
         public override string Køretøj()
@@ -18,6 +19,12 @@ namespace BilletLibrary
             return "Bil";
         }
 
+       
+
+        public Bil()
+        {
+
+        }
         public Bil(string nummerplade)
         {
             if (nummerplade.Length < 8)
