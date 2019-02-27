@@ -6,6 +6,8 @@ namespace BilletLibrary
 {
     abstract class KøretøjType
     {
+        public String NummerPlade;
+        public DateTime Dato;
         public abstract decimal Pris();
 
         public abstract string Køretøj();

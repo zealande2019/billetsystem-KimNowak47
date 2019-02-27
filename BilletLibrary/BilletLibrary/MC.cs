@@ -4,21 +4,33 @@ using System.Text;
 
 namespace BilletLibrary
 {
-    class MC
+    class MC : KøretøjType
     {
-        public String NummerPlade;
-        public DateTime Dato;
+        
 
-        public decimal Pris()
+        public override decimal Pris()
         {
             return 125;
         }
 
-        public string Køretøj()
+        public override string Køretøj()
         {
             return "MC";
         }
 
+        public MC(string nummerplade)
+        {
+            if (nummerplade.Length < 8)
+            {
+                this.NummerPlade = nummerplade;
+            }
+            else
+            {
+                Exception ex = new Exception("Nummerpladen skal være 7 tegn eller mindre");
+
+                throw ex;
+            }
+        }
 
     }
 }
