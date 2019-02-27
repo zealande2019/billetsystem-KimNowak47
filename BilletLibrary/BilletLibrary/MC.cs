@@ -6,11 +6,11 @@ namespace BilletLibrary
 {
     class MC : KøretøjType
     {
-        
+        private decimal NormalPris = 125;
 
         public override decimal Pris()
         {
-            return 125;
+            return NormalPris;
         }
 
         public override string Køretøj()
@@ -29,6 +29,25 @@ namespace BilletLibrary
                 Exception ex = new Exception("Nummerpladen skal være 7 tegn eller mindre");
 
                 throw ex;
+            }
+        }
+
+        public MC(string nummerplade, string brobizz )
+        {
+            if (nummerplade.Length < 8)
+            {
+                this.NummerPlade = nummerplade;
+            }
+            else
+            {
+                Exception ex = new Exception("Nummerpladen skal være 7 tegn eller mindre");
+
+                throw ex;
+            }
+
+            if (brobizz.Equals("brobizz"))
+            {
+                NormalPris = 118;
             }
         }
 
